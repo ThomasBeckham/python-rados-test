@@ -8,7 +8,7 @@ WORKDIR /app
 RUN apt update && apt install -y python3-rados && rm -rf /var/lib/apt/lists/*
 
 # Ensure the rados module is accessible
-RUN python3 -c "import sys; sys.path.append('/usr/lib/python3/dist-packages'); import rados; print('Successfully imported rados')"
+#RUN python3 -c "import sys; sys.path.append('/usr/lib/python3/dist-packages'); import rados; print('Successfully imported rados')"
 
 # Install Python dependencies (if any)
 COPY requirements.txt .

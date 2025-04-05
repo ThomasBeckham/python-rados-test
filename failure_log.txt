@@ -1,0 +1,148 @@
+$ docker build --no-cache -t python-rados-test .
+#1 [internal] load build definition from Dockerfile
+#1 sha256:042323c8112961365c29589ceacb4d8888427e76fc9696a17366362229b49e38
+#1 transferring dockerfile: 32B done
+#1 DONE 0.1s
+
+#2 [internal] load .dockerignore
+#2 sha256:ab72955266acbabd7b8c033addca0fd3c2e610d9297cc0f90f46d151cb71a33c
+#2 transferring context: 2B done
+#2 DONE 0.1s
+
+#3 [internal] load metadata for docker.io/library/python:3.11
+#3 sha256:7698dc7fe23de87d3d68776a2858bb63262ae8834015569237de1c079ed00102
+#3 DONE 0.8s
+
+#4 [1/7] FROM docker.io/library/python:3.11@sha256:ebfa8696e47a68cffebb31e370a93ce57c01bc753f246ceaaef72801d1661351
+#4 sha256:89b9f98ef062cbdc8c518d3ea05098cd83c34a7cf058a05945af720d06eab3c9
+#4 DONE 0.0s
+
+#5 [2/7] WORKDIR /app
+#5 sha256:7fca4d5315a8bf1ea13ebd1da6f8f9957f1d7aab6082f629257f58644b37d220
+#5 CACHED
+
+#7 [internal] load build context
+#7 sha256:04b9135746c367bbcfc8234e27eb0c093736113fbb09608265a4244dbb9ece1c
+#7 transferring context: 3.17kB 0.0s done
+#7 DONE 0.1s
+
+#6 [3/7] RUN apt update && apt install -y python3-rados && rm -rf /var/lib/apt/lists/*
+#6 sha256:6c7e1d2d00c8c9c584e8cffbddbf5d86f888f202e7e058763b768b43cb4f1b31
+#6 0.529
+#6 0.529 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+#6 0.529
+#6 0.856 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#6 0.945 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#6 0.984 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#6 1.071 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8792 kB]
+#6 2.513 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [512 B]
+#6 2.515 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [251 kB]
+#6 3.747 Fetched 9298 kB in 3s (2948 kB/s)
+#6 3.747 Reading package lists...
+#6 4.447 Building dependency tree...
+#6 4.601 Reading state information...
+#6 4.624 8 packages can be upgraded. Run 'apt list --upgradable' to see them.
+#6 4.629
+#6 4.629 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+#6 4.629
+#6 4.633 Reading package lists...
+#6 5.309 Building dependency tree...
+#6 5.467 Reading state information...
+#6 5.715 The following additional packages will be installed:
+#6 5.715   ibverbs-providers libboost-iostreams1.74.0 libboost-thread1.74.0 libfmt9
+#6 5.716   libibverbs1 libnl-3-200 libnl-route-3-200 librados2 librdmacm1
+#6 5.796 The following NEW packages will be installed:
+#6 5.796   ibverbs-providers libboost-iostreams1.74.0 libboost-thread1.74.0 libfmt9
+#6 5.797   libibverbs1 libnl-3-200 libnl-route-3-200 librados2 librdmacm1 python3-rados
+#6 5.938 0 upgraded, 10 newly installed, 0 to remove and 8 not upgraded.
+#6 5.938 Need to get 4884 kB of archives.
+#6 5.938 After this operation, 20.9 MB of additional disk space will be used.
+#6 5.938 Get:1 http://deb.debian.org/debian bookworm/main amd64 libnl-3-200 amd64 3.7.0-0.2+b1 [63.1 kB]
+#6 5.994 Get:2 http://deb.debian.org/debian bookworm/main amd64 libnl-route-3-200 amd64 3.7.0-0.2+b1 [185 kB]
+#6 6.072 Get:3 http://deb.debian.org/debian bookworm/main amd64 libibverbs1 amd64 44.0-2 [60.7 kB]
+#6 6.084 Get:4 http://deb.debian.org/debian bookworm/main amd64 ibverbs-providers amd64 44.0-2 [335 kB]
+#6 6.150 Get:5 http://deb.debian.org/debian bookworm/main amd64 libboost-iostreams1.74.0 amd64 1.74.0+ds1-21 [240 kB]
+#6 6.186 Get:6 http://deb.debian.org/debian bookworm/main amd64 libboost-thread1.74.0 amd64 1.74.0+ds1-21 [257 kB]
+#6 6.224 Get:7 http://deb.debian.org/debian bookworm/main amd64 libfmt9 amd64 9.1.0+ds1-2 [113 kB]
+#6 6.241 Get:8 http://deb.debian.org/debian bookworm/main amd64 librdmacm1 amd64 44.0-2 [68.6 kB]
+#6 6.272 Get:9 http://deb.debian.org/debian bookworm/main amd64 librados2 amd64 16.2.15+ds-0+deb12u1 [3249 kB]
+#6 6.829 Get:10 http://deb.debian.org/debian bookworm/main amd64 python3-rados amd64 16.2.15+ds-0+deb12u1 [314 kB]
+#6 7.182 debconf: delaying package configuration, since apt-utils is not installed
+#6 7.238 Fetched 4884 kB in 1s (4596 kB/s)
+#6 7.341 Selecting previously unselected package libnl-3-200:amd64.
+(Reading database ... 23965 files and directories currently installed.)
+#6 7.516 Preparing to unpack .../0-libnl-3-200_3.7.0-0.2+b1_amd64.deb ...
+#6 7.554 Unpacking libnl-3-200:amd64 (3.7.0-0.2+b1) ...
+#6 7.690 Selecting previously unselected package libnl-route-3-200:amd64.
+#6 7.693 Preparing to unpack .../1-libnl-route-3-200_3.7.0-0.2+b1_amd64.deb ...
+#6 7.712 Unpacking libnl-route-3-200:amd64 (3.7.0-0.2+b1) ...
+#6 7.866 Selecting previously unselected package libibverbs1:amd64.
+#6 7.869 Preparing to unpack .../2-libibverbs1_44.0-2_amd64.deb ...
+#6 7.886 Unpacking libibverbs1:amd64 (44.0-2) ...
+#6 8.091 Selecting previously unselected package ibverbs-providers:amd64.
+#6 8.093 Preparing to unpack .../3-ibverbs-providers_44.0-2_amd64.deb ...
+#6 8.132 Unpacking ibverbs-providers:amd64 (44.0-2) ...
+#6 8.288 Selecting previously unselected package libboost-iostreams1.74.0:amd64.
+#6 8.291 Preparing to unpack .../4-libboost-iostreams1.74.0_1.74.0+ds1-21_amd64.deb ...
+#6 8.309 Unpacking libboost-iostreams1.74.0:amd64 (1.74.0+ds1-21) ...
+#6 8.462 Selecting previously unselected package libboost-thread1.74.0:amd64.
+#6 8.465 Preparing to unpack .../5-libboost-thread1.74.0_1.74.0+ds1-21_amd64.deb ...
+#6 8.483 Unpacking libboost-thread1.74.0:amd64 (1.74.0+ds1-21) ...
+#6 8.633 Selecting previously unselected package libfmt9:amd64.
+#6 8.636 Preparing to unpack .../6-libfmt9_9.1.0+ds1-2_amd64.deb ...
+#6 8.652 Unpacking libfmt9:amd64 (9.1.0+ds1-2) ...
+#6 8.789 Selecting previously unselected package librdmacm1:amd64.
+#6 8.793 Preparing to unpack .../7-librdmacm1_44.0-2_amd64.deb ...
+#6 8.811 Unpacking librdmacm1:amd64 (44.0-2) ...
+#6 8.938 Selecting previously unselected package librados2.
+#6 8.941 Preparing to unpack .../8-librados2_16.2.15+ds-0+deb12u1_amd64.deb ...
+#6 8.958 Unpacking librados2 (16.2.15+ds-0+deb12u1) ...
+#6 9.322 Selecting previously unselected package python3-rados.
+#6 9.325 Preparing to unpack .../9-python3-rados_16.2.15+ds-0+deb12u1_amd64.deb ...
+#6 9.344 Unpacking python3-rados (16.2.15+ds-0+deb12u1) ...
+#6 9.504 Setting up libboost-iostreams1.74.0:amd64 (1.74.0+ds1-21) ...
+#6 9.563 Setting up libfmt9:amd64 (9.1.0+ds1-2) ...
+#6 9.624 Setting up libnl-3-200:amd64 (3.7.0-0.2+b1) ...
+#6 9.718 Setting up libboost-thread1.74.0:amd64 (1.74.0+ds1-21) ...
+#6 9.775 Setting up libnl-route-3-200:amd64 (3.7.0-0.2+b1) ...
+#6 9.834 Setting up libibverbs1:amd64 (44.0-2) ...
+#6 10.04 Setting up ibverbs-providers:amd64 (44.0-2) ...
+#6 10.40 Setting up librdmacm1:amd64 (44.0-2) ...
+#6 10.46 Setting up librados2 (16.2.15+ds-0+deb12u1) ...
+#6 10.51 Setting up python3-rados (16.2.15+ds-0+deb12u1) ...
+#6 10.57 Processing triggers for libc-bin (2.36-9+deb12u10) ...
+#6 DONE 11.1s
+
+#8 [4/7] COPY requirements.txt .
+#8 sha256:7abacb8f3550de7718b4cf3c207c1a70a7eb070781588c21df8fff284c2861cb
+#8 DONE 0.3s
+
+#9 [5/7] RUN pip install --no-cache-dir -r requirements.txt
+#9 sha256:46515523b3fefd5dfd776a927bb045be4d4095277630a1146778799d196c7344
+#9 2.630 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#9 2.916
+#9 2.916 [notice] A new release of pip is available: 24.0 -> 25.0.1
+#9 2.916 [notice] To update, run: pip install --upgrade pip
+#9 DONE 3.2s
+
+#10 [6/7] COPY . /app
+#10 sha256:d36c813cb366ec495471ef20ba50f82b533f4c14345962520b24ecabbe5631f4
+#10 DONE 0.2s
+
+#11 [7/7] RUN python3 -c "import rados; print('Successfully imported rados')" || echo 'Failed to import rados'
+#11 sha256:0f57eb70064396f13cfbfa952830f864c5d63b597fc13b7843abdb52ca915f07
+#11 0.552 Traceback (most recent call last):
+#11 0.552   File "<string>", line 1, in <module>
+#11 0.552 ModuleNotFoundError: No module named 'rados'
+#11 0.556 Failed to import rados
+#11 DONE 0.6s
+
+#12 exporting to image
+#12 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#12 exporting layers
+#12 exporting layers 0.5s done
+#12 writing image sha256:4bbc16a5a838c5412c41f9e17c5319121ddfcd2f936721bb9b2bc8d8f0a82427 0.0s done
+#12 naming to docker.io/library/python-rados-test done
+#12 DONE 0.6s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
